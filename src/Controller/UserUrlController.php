@@ -31,9 +31,14 @@ class UserUrlController extends AbstractController
         	$data = $form->getData();
 
         	$shortenedsubstr = substr(($data['full_url']), 0, 5);
+        	$length = 5;    
+			$randEnd = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,$length);	
+			$shortenedUrlSubstr = $shortenedsubstr.$randEnd;
+    		
+
     		$userurl = new UserUrl();
 		 	$userurl->setInputUrl($data['full_url']);
-		 	$userurl->setShortenedUrl($shortenedsubstr);
+		 	$userurl->setShortenedUrl($shortenedUrlSubstr);
 
 		 	
 	    

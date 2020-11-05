@@ -26,6 +26,11 @@ class UserUrl
      *    protocols = {"http", "https", "ftp"}
      *)
      */
+
+     /**
+     * @Assert\Url
+     * @Assert\NotBlank
+     */
     private $InputUrl;
 
     /**
