@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+<div>
+	 <h2>form</h2>
+	 {{ form_start(userUrlForm) }}
+	 <button type"submit">create</button>
+	 {{ form_end(userUrlForm) }}
+</div>
+
+<div>
+	 {% for userurl in userurls %}
+	 	<p><a href="{{ path('app_userurl_show',{ id: userurl.id }) }}">{{ userurl.id }} {{ userurl.inputurl }} {{ userurl.shortenedurl }}</a></p>
+	 {% endfor %}
+</div>
+{% endblock %}
